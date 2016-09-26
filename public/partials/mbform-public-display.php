@@ -11,22 +11,12 @@
  * @subpackage Plugin_Name/public/partials
  */
 //
-$hotelDestino = get_option('mbform_hotel_destino_id');
-$action ='https://'.get_option('mbform_url_identifier').__('.mbooking.com.ar/en/book/','mbform') ;
-//
-$styleVals = array();
-if(get_option('mbform_distance_left')){
-    array_push($styleVals ,'left:'.get_option('mbform_distance_left'));
-}
-if(get_option('mbform_distance_top')){
-    array_push($styleVals ,'top:'.get_option('mbform_distance_top'));
-}
-$style	= ' style="'.implode(';',$styleVals).'" ';
+
 ?>
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-<div id="mbmainform"  class="  green">
+<div id="mbmainform"  class="<?php echo $class;?> ">
     <div class="mbform-row">
-        <form action="<?php echo $action; ?>"  method="GET"    <?php echo $style;?>  >
+        <form action="<?php echo $action; ?>"  method="GET"   <?php echo $style;?>  >
             <div class="mbform-md-2">
                 <input type="hidden" id="hoteldestino" name="hoteldestino" value="<?php echo $hotelDestino; ?>" />
                 <label><?php echo __('Arrival Date','mbform');?></label>

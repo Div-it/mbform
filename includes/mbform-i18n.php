@@ -22,7 +22,7 @@
  * @since      1.0.0
  * @package    MBForm
  * @subpackage MBForm/includes
- * @author     Your Name <email@example.com>
+ * @author     Webmaster Div-it <webmaster@div-it.com.ar>
  */
 class MBForm_i18n {
 
@@ -34,11 +34,7 @@ class MBForm_i18n {
 	 */
 	public function load_plugin_textdomain() {
 
-		load_plugin_textdomain(
-			'mbform',
-			false,
-			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
-		);
+		load_plugin_textdomain('mbform',false,dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/');
 
 	}
 

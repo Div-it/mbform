@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MBForm\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2016-09-26 10:09-0300\n"
+"POT-Creation-Date: 2016-09-26 16:30-0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Div-it <webmaster@div-it.com.ar>\n"
@@ -31,35 +31,43 @@ msgstr "MBForm configuración basica"
 msgid "MBForm"
 msgstr "MBForm"
 
-#: admin/mbform-admin.php:136
+#: admin/mbform-admin.php:138
 msgid "Basic Settings"
 msgstr "Configuración Basica"
 
-#: admin/mbform-admin.php:142
+#: admin/mbform-admin.php:144
 msgid "Display Settings"
 msgstr "Configuraciones de Visualización"
 
-#: admin/mbform-admin.php:149
+#: admin/mbform-admin.php:151
 msgid "Hotel Id"
 msgstr "Hotel Destino Id "
 
-#: admin/mbform-admin.php:157
+#: admin/mbform-admin.php:159
 msgid "URL identificator"
 msgstr "Identificador URL "
 
-#: admin/mbform-admin.php:165
-msgid "Add to Header"
-msgstr "Agregar al Header"
+#: admin/mbform-admin.php:167
+msgid "Hook to action"
+msgstr "Enganchar a Acción"
 
-#: admin/mbform-admin.php:172
+#: admin/mbform-admin.php:174
+msgid "Action Name"
+msgstr "Nombre de Acción"
+
+#: admin/mbform-admin.php:181
 msgid "Top distance"
 msgstr "Distancia superior"
 
-#: admin/mbform-admin.php:179
+#: admin/mbform-admin.php:188
 msgid "Left distance"
 msgstr "Distancia izquierda"
 
-#: admin/mbform-admin.php:189
+#: admin/mbform-admin.php:195
+msgid "Color palette"
+msgstr "Paleta de color"
+
+#: admin/mbform-admin.php:205
 msgid ""
 "From this administrator must configure the search parameters in Book-It, the "
 "same will be granted by the team Div-it in high account."
@@ -68,21 +76,35 @@ msgstr ""
 "motor de reservas los mismos le fueron otorgados por Div-it al dar el alta "
 "de la cuenta ."
 
-#: admin/mbform-admin.php:194
+#: admin/mbform-admin.php:210
 msgid "From this administrator you can define how display plugin."
 msgstr ""
 "Desde este administrador puede definir la posición en la que se muestra el "
 "formulario"
 
-#: admin/mbform-admin.php:225
-msgid "Add into the theme to get_header hook"
-msgstr "Agregar en el tema atado al gancho get_header"
+#: admin/mbform-admin.php:242
+msgid "Action Name to hook default: get_template_part_template-parts/content"
+msgstr ""
+"Acción de la engancharse ( default :  get_template_part_template-parts/"
+"content ) "
 
-#: admin/mbform-admin.php:236
+#: admin/mbform-admin.php:259
+msgid "Green"
+msgstr "Verde"
+
+#: admin/mbform-admin.php:260
+msgid "Blue"
+msgstr "Azul"
+
+#: admin/mbform-admin.php:261
+msgid "Red"
+msgstr "Rojo"
+
+#: admin/mbform-admin.php:273
 msgid "Top distance to header"
 msgstr "Distancia al borde superior"
 
-#: admin/mbform-admin.php:247
+#: admin/mbform-admin.php:284
 msgid "Left distance to header"
 msgstr "Distancia al borde izquierdo"
 
@@ -90,30 +112,42 @@ msgstr "Distancia al borde izquierdo"
 msgid ".mbooking.com.ar/en/book/"
 msgstr ".mbooking.com.ar/es/reservas/"
 
-#: public/partials/mbform-public-display.php:24
+#: public/partials/mbform-public-display.php:41
 msgid "Arrival Date"
 msgstr "Fecha de entrada"
 
-#: public/partials/mbform-public-display.php:25
+#: public/partials/mbform-public-display.php:42
 msgid "Arrival"
 msgstr "Entrada"
 
-#: public/partials/mbform-public-display.php:29
+#: public/partials/mbform-public-display.php:46
 msgid "Departure Date"
 msgstr "Fecha de salida"
 
-#: public/partials/mbform-public-display.php:30
+#: public/partials/mbform-public-display.php:47
 msgid "Departure"
 msgstr "Salida"
 
-#: public/partials/mbform-public-display.php:34
-#: public/partials/mbform-public-display.php:35
+#: public/partials/mbform-public-display.php:51
+#: public/partials/mbform-public-display.php:52
 msgid "Promotional Code"
 msgstr "Cod.  Promocional"
 
-#: public/partials/mbform-public-display.php:37
+#: public/partials/mbform-public-display.php:54
 msgid "Book Now!"
 msgstr "Reservar"
+
+#~ msgid "Add to Action"
+#~ msgstr "Agregar Acción"
+
+#~ msgid "Hook to theme action"
+#~ msgstr "Enganchar a una acción del template"
+
+#~ msgid "Add to Header"
+#~ msgstr "Agregar al Header"
+
+#~ msgid "Add into the theme to get_header hook"
+#~ msgstr "Agregar en el tema atado al gancho get_header"
 
 #~ msgid "Top distance from header"
 #~ msgstr "Distancia desde el borde superior de la cabecera"

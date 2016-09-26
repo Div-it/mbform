@@ -30,8 +30,12 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 //eliminando los options
-unregister_setting( 'mbform', 'mbform_hotel_destino_id'); 
-unregister_setting( 'mbform', 'mbform_url_identifier'); 
+delete_option( 'mbform', 'mbform_hotel_destino_id');
+delete_option( 'mbform', 'mbform_url_identifier');
+delete_option( 'mbform', 'mbform_action_hook');
+delete_option( 'mbform', 'mbform_hook_active');
+delete_option( 'mbform', 'mbform_distance_top');
+delete_option( 'mbform', 'mbform_distance_left');
 
 /*
 $option_name = 'wporg_option';

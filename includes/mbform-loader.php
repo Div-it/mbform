@@ -3,11 +3,10 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    MBForm
+ * @subpackage MBForm/includes
  */
 
 /**
@@ -17,9 +16,10 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
- * @author     Your Name <email@example.com>
+ * @since      1.0.0
+ * @package    MBForm
+ * @subpackage MBForm/includes
+ * @author     Webmaster Div-it <webmaster@div-it.com.ar>
  */
 class MBForm_Loader {
 

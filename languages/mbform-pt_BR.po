@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MBForm\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2016-09-26 10:48-0300\n"
+"POT-Creation-Date: 2016-09-26 16:48-0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Div-it <webmaster@div-it.com.ar>\n"
@@ -31,35 +31,43 @@ msgstr "Página de configuração básica MBForm"
 msgid "MBForm"
 msgstr "MBForm"
 
-#: admin/mbform-admin.php:136
+#: admin/mbform-admin.php:138
 msgid "Basic Settings"
 msgstr "Configurações básicas"
 
-#: admin/mbform-admin.php:142
+#: admin/mbform-admin.php:144
 msgid "Display Settings"
-msgstr ""
+msgstr "Configurações do visor"
 
-#: admin/mbform-admin.php:149
+#: admin/mbform-admin.php:151
 msgid "Hotel Id"
 msgstr "Hotel Destino Id "
 
-#: admin/mbform-admin.php:157
+#: admin/mbform-admin.php:159
 msgid "URL identificator"
 msgstr "identificador de URL"
 
-#: admin/mbform-admin.php:165
-msgid "Add to Header"
-msgstr ""
+#: admin/mbform-admin.php:167
+msgid "Hook to action"
+msgstr "Gancho para a ação"
 
-#: admin/mbform-admin.php:172
+#: admin/mbform-admin.php:174
+msgid "Action Name"
+msgstr "Nome ação"
+
+#: admin/mbform-admin.php:181
 msgid "Top distance"
-msgstr ""
+msgstr "Distância superior"
 
-#: admin/mbform-admin.php:179
+#: admin/mbform-admin.php:188
 msgid "Left distance"
-msgstr ""
+msgstr "Distância esquerda"
 
-#: admin/mbform-admin.php:189
+#: admin/mbform-admin.php:195
+msgid "Color palette"
+msgstr "Paleta de cores"
+
+#: admin/mbform-admin.php:205
 msgid ""
 "From this administrator must configure the search parameters in Book-It, the "
 "same will be granted by the team Div-it in high account."
@@ -67,47 +75,60 @@ msgstr ""
 "Deste administrador deve configurar os parâmetros de pesquisa em Book-It, o "
 "mesmo será concedido pela equipe Div-lo em alta conta."
 
-#: admin/mbform-admin.php:194
+#: admin/mbform-admin.php:210
 msgid "From this administrator you can define how display plugin."
-msgstr ""
+msgstr "A partir deste administrador, você pode definir como visor plugin."
 
-#: admin/mbform-admin.php:223
-msgid "Add into the theme to get_header hook"
+#: admin/mbform-admin.php:242
+msgid "Action Name to hook default: get_template_part_template-parts/content"
 msgstr ""
+"Nome da ação de gancho default:  get_template_part_template-parts/content"
 
-#: admin/mbform-admin.php:234
+#: admin/mbform-admin.php:259
+msgid "Green"
+msgstr "Verde"
+
+#: admin/mbform-admin.php:260
+msgid "Blue"
+msgstr "Azul"
+
+#: admin/mbform-admin.php:261
+msgid "Red"
+msgstr "Vermelho"
+
+#: admin/mbform-admin.php:273
 msgid "Top distance to header"
-msgstr ""
+msgstr "Distância superior ao cabeçalho"
 
-#: admin/mbform-admin.php:245
+#: admin/mbform-admin.php:284
 msgid "Left distance to header"
-msgstr ""
+msgstr "Esquerda raio de cabeçalho"
 
-#: public/partials/mbform-public-display.php:15
+#: public/mbform-public.php:122 public/mbform-public.php:144
 msgid ".mbooking.com.ar/en/book/"
 msgstr ".mbooking.com.ar/pt/reserva/"
 
-#: public/partials/mbform-public-display.php:32
+#: public/partials/mbform-public-display.php:22
 msgid "Arrival Date"
 msgstr "Data de chegada"
 
-#: public/partials/mbform-public-display.php:33
+#: public/partials/mbform-public-display.php:23
 msgid "Arrival"
 msgstr "Chegada"
 
-#: public/partials/mbform-public-display.php:37
+#: public/partials/mbform-public-display.php:27
 msgid "Departure Date"
 msgstr "Data de partida"
 
-#: public/partials/mbform-public-display.php:38
+#: public/partials/mbform-public-display.php:28
 msgid "Departure"
 msgstr "Partida"
 
-#: public/partials/mbform-public-display.php:42
-#: public/partials/mbform-public-display.php:43
+#: public/partials/mbform-public-display.php:32
+#: public/partials/mbform-public-display.php:33
 msgid "Promotional Code"
 msgstr "Código promocional"
 
-#: public/partials/mbform-public-display.php:45
+#: public/partials/mbform-public-display.php:35
 msgid "Book Now!"
 msgstr "Reserve agora"

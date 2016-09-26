@@ -22,19 +22,35 @@
  * @since      1.0.0
  * @package    MBForm
  * @subpackage MBForm/includes
- * @author     Your Name <email@example.com>
+ * @author     Webmaster Div-it <webmaster@div-it.com.ar>
  */
 class MBForm_Shortcode {
 
-
 	private $shortcode_name;
 
+    /**
+     * MBForm_Shortcode constructor.
+     * @param string $tag
+     */
 	public function __construct($tag='mbform'){
 		$this->shortcode_name = $tag;
 	}
-	
+
+    /**
+     *
+     */
 	public function set_shortcode(){
-		add_shortcode('mbform', array('MBForm_Public','loadForm'));
+		add_shortcode('mbform', array(&$this,'loadForm'));
 	}
 
+    /**
+     *
+     */
+	public function loadForm($atts, $content = null ){
+        $top = (isset($atts['top'])) ? $atts['top']: null;
+        $left = (isset($atts['left'])) ? $atts['left']: null;
+        $palette = (isset($atts['palette'])) ? $atts['palette']: null;
+	    MBForm_Public::loadShortCodeForm($top,$left,$palette);
+        return '';
+    }
 }

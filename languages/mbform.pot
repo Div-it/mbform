@@ -1,4 +1,4 @@
-# WordPress Blank Pot
+# WordPress MBForm Pot
 # Copyright (C) 2014 ...
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""

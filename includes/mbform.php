@@ -78,6 +78,11 @@ class MBForm {
 		$this->init_shorcode();
 	}
 
+    /**
+     * init_shorcode
+     * Init the shortcode add
+     * @since    1.0.0
+     */
 	public function init_shorcode(){
 		$plugin_shortcode = new MBForm_Shortcode('mbform');
 		$this->loader->add_action('init',$plugin_shortcode,'set_shortcode');
@@ -181,14 +186,13 @@ class MBForm {
 	private function define_public_hooks() {
 
 		$plugin_public = new MBForm_Public( $this->get_plugin_name(), $this->get_version() );
-        $actionHook = get_option('mbform_action_hook');
-        if($actionHook){
-            $this->loader->add_action( 'get_template_part_template-parts/content', 'MBForm_Public', 'loadForm',1000 );
+        if( get_option('mbform_hook_active')){
+            $actionHook =get_option('mbform_action_hook');
+            $this->loader->add_action( $actionHook, 'MBForm_Public', 'loadForm',1000 );
         }
         $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
-	}
+        $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+    }
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.

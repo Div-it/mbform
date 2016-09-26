@@ -126,9 +126,11 @@ class MBForm_Admin {
 	public function register_settings(){
 		register_setting( 'mbform', 'mbform_hotel_destino_id',array(&$this,'sanitize_hotel'));
 		register_setting( 'mbform', 'mbform_url_identifier',array(&$this,'sanitize_url_identifier'));
-		register_setting( 'mbform', 'mbform_action_hook',array(&$this,'sanitize_hook'));
+		register_setting( 'mbform', 'mbform_hook_active',array(&$this,'sanitize_hook'));
+		register_setting( 'mbform', 'mbform_action_hook');
 		register_setting( 'mbform', 'mbform_distance_top');
 		register_setting( 'mbform', 'mbform_distance_left');
+		register_setting( 'mbform', 'mbform_palette');
 
 		//set section
 		add_settings_section(
@@ -161,8 +163,15 @@ class MBForm_Admin {
     	);
 		//
 		add_settings_field(
+			'mbform_hook_active',
+			__('Hook to action','mbform'),
+			array(&$this,'settings_hook_active_field_cb'),
+			'mbform',
+			'mbform_display_section'
+		);
+		add_settings_field(
 			'mbform_action_hook',
-			__('Add to Action','mbform'),
+			__('Action Name','mbform'),
 			array(&$this,'settings_action_hook_field_cb'),
 			'mbform',
 			'mbform_display_section'
@@ -178,6 +187,13 @@ class MBForm_Admin {
 			'mbform_distance_left',
 			__('Left distance','mbform'),
 			array(&$this,'settings_distance_left_field_cb'),
+			'mbform',
+			'mbform_display_section'
+		);
+		add_settings_field(
+			'mbform_palette',
+			__('Color palette','mbform'),
+			array(&$this,'settings_palette_field_cb'),
 			'mbform',
 			'mbform_display_section'
 		);
@@ -218,9 +234,32 @@ class MBForm_Admin {
 	public function settings_action_hook_field_cb()
 	{
 		$action_hook = get_option('mbform_action_hook');
+		if(empty($action_hook)){
+			$action_hook = 'get_template_part_template-parts/content';
+		}
 		?>
-		<input type="checkbox" name="mbform_action_hook" value="add_to_header" <?php if($action_hook){ 	echo ' checked="checked" ';	}?> 	/>
-		<span><?php echo __('Add into the theme to get_template_part_template-parts/content hook','mbform');?></span>
+		<input type="text" name="mbform_action_hook" value="<?php echo  isset($action_hook) ? esc_attr($action_hook) : ''; ?>"  required >
+		<span><?php echo __('Action Name to hook default: get_template_part_template-parts/content','mbform');?></span>
+		<?php
+	}
+
+	public function settings_hook_active_field_cb()
+	{
+		$hook_active = get_option('mbform_hook_active');
+		?>
+		<input type="checkbox" name="mbform_hook_active" value="add_to_header" <?php if($hook_active){ 	echo ' checked="checked" ';	}?> 	/>
+		<?php
+	}
+
+	public function settings_palette_field_cb()
+	{
+		$palette = get_option('mbform_palette');
+		?>
+		<select  name="mbform_palette" >
+			<option value="green" <?php if($palette=='green') echo 'selected="selected"'?>  ><?php echo __('Green','mbform');?></option>
+			<option value="blue" <?php if($palette=='blue') echo 'selected="selected"'?>  ><?php echo __('Blue','mbform');?></option>
+			<option value="red" <?php if($palette=='red') echo 'selected="selected"'?>  ><?php echo __('Red','mbform');?></option>
+		</select>
 		<?php
 	}
 
