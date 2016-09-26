@@ -1,0 +1,16 @@
+
+    /*-----------------------------------------------------------------*/
+#mbmainform {position:relative;left:0;top:0;}
+#mbmainform .mbform-row form { display: block;    position: absolute;    width: 100%;     z-index: 99999;    left: 0; top:0;padding:0 5em;}
+#mbmainform .mbform-row form .mbform-md-2{    width: 23%; margin: 0 0.3%;     float: left;    display: block;    overflow: hidden; padding:0.3em 0;}
+#mbmainform .mbform-row label{ position:absolute;left:-999999em;}
+#mbmainform .mbform-row input{ }
+#mbmainform .mbform-row button[type="submit"]{font-size:1.2em;padding:0.59em 0.4375em;margin: 0.3em 0.3%;   }
+#mbmainform .mbform-row button[type="submit"]:hover{}
+
+/*-----------------------------------------------------------------*/
+#mbmainform.green .mbform-row form {background-color:#5880a4;color:#fff;}
+#mbmainform.green .mbform-row input{color:#5880a4;}
+#mbmainform.green .mbform-row button[type="submit"]{ color:#fff;background-color:#69b0c9;}
+/*-----------------------------------------------------------------*/
+
