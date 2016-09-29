@@ -117,41 +117,47 @@ class MBForm_Public {
      * @since    1.0.0
      */
 	public static function loadForm(){
-        $class = 'green';
-        $hotelDestino = get_option('mbform_hotel_destino_id');
-        $action ='https://'.get_option('mbform_url_identifier').__('.mbooking.com.ar/en/book/','mbform') ;
-        $styleVals = array();
-        if(get_option('mbform_hook_active')){
-            if(get_option('mbform_distance_left')){
-                array_push($styleVals ,'left:'.get_option('mbform_distance_left'));
-            }
-            if(get_option('mbform_distance_top')){
-                array_push($styleVals ,'top:'.get_option('mbform_distance_top'));
-            }
-        }
-        if(get_option('mbform_palette')){
-            $class = get_option('mbform_palette');
-        }
-        $style	= ' style="'.implode(';',$styleVals).'" ';
-        include_once( plugin_dir_path ( __FILE__ ) .'..'.DIRECTORY_SEPARATOR.'public'.DIRECTORY_SEPARATOR. 'partials'.DIRECTORY_SEPARATOR.'mbform-public-display.php');
+        $includedhtml =  self::get_partial('mbform-public-display',get_option('mbform_distance_left'), get_option('mbform_distance_top'),  get_option('mbform_palette'));
+        echo $includedhtml;
     }
 
+    private function get_partial($partialName,$left=null,$top=null,$palette=null){
+        //
+        try{
+            $includedhtml = '';
+            $hotelDestino = get_option('mbform_hotel_destino_id');
+            $action ='https://'.get_option('mbform_url_identifier').__('.mbooking.com.ar/en/book/','mbform') ;
+            $styleVals = array();
+            if(isset($left)){
+                array_push($styleVals ,'left:'.$left);
+            }
+            if(isset($top)){
+                array_push($styleVals ,'top:'.$top);
+            }
+            //
+            if($palette){
+                $class = 'tpl_'.$palette;
+            }else{
+                $class = 'tpl_green';
+            }
+            $style = '';
+            if(count($styleVals)){
+           //     $style = ' style="'.implode(';',$styleVals).'" ';
+            }
+            //
+            ob_start();
+            include_once( plugin_dir_path ( __FILE__ ) .'..'.DIRECTORY_SEPARATOR.'public'.DIRECTORY_SEPARATOR. 'partials'.DIRECTORY_SEPARATOR.$partialName.'.php');
+            $includedhtml = ob_get_contents();
+            ob_end_clean();
+            //
+        }catch(Exception $e){
+        }
+        return $includedhtml;
+
+    }
 
     public static function loadShortCodeForm($top=null,$left=null,$palette=null){
-        $class = 'green';
-        $styleVals = array();
-        $hotelDestino = get_option('mbform_hotel_destino_id');
-        $action ='https://'.get_option('mbform_url_identifier').__('.mbooking.com.ar/en/book/','mbform') ;
-        if(isset($left)){
-            array_push($styleVals ,'left:'.$left);
-        }
-        if(isset($top)){
-            array_push($styleVals ,'top:'.$top);
-        }
-        if(isset($palette)){
-            $class = $palette;
-        }
-        $style	= ' style="'.implode(';',$styleVals).'" ';
-        include_once( plugin_dir_path ( __FILE__ ) .'..'.DIRECTORY_SEPARATOR.'public'.DIRECTORY_SEPARATOR. 'partials'.DIRECTORY_SEPARATOR.'mbform-public-display.php');
+        $includedhtml = self::get_partial('mbform-public-display',$left,$top,$palette);
+        return $includedhtml;
     }
 }

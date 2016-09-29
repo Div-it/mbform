@@ -1,24 +1,177 @@
 # WordPress MBForm Pot
 # Copyright (C) 2014 ...
 # This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: WordPress Blank Pot v1.0.0\n"
-"POT-Creation-Date: 2016-09-20 10:50+0100\n"
+"Project-Id-Version: "
+"Mbform Pot v1.0.0\n"
+"POT-Creation-Date: "
+"2016-09-28 17:49-0300\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Webmaster  <webmaster@div-it.com.ar>\n"
-"Language-Team: Webmaster <webmaster@div-it.com.ar>\n"
-"Report-Msgid-Bugs-To: Webmaster<webmaster@div-it.com.ar>\n"
+"Last-Translator: "
+"Webmaster <webmaster@div-"
+"it.com.ar>\n"
+"Language-Team: Webmaster "
+"<webmaster@div-it.com."
+"ar>\n"
+"Report-Msgid-Bugs-To: "
+"Webmaster<webmaster@div-"
+"it.com.ar>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Textdomain-Support: yes"
-"X-Generator: Poedit 1.6.4\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2;\n"
-"X-Poedit-Basepath: ../\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-Language: English\n"
-"X-Poedit-Country: UNITED STATES\n"
-"X-Poedit-Bookmarks: \n"
+"Content-Type: text/"
+"plain; charset=UTF-8\n"
+"Content-Transfer-"
+"Encoding: 8bit\n"
+"Plural-Forms: "
+"nplurals=2; plural=n != "
+"1;\n"
+"X-Textdomain-Support: "
+"yesX-Generator: Poedit "
+"1.6.4\n"
+"X-Poedit-SourceCharset: "
+"UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;esc_html_e;"
+"esc_html_x:1,2c;"
+"esc_html__;esc_attr_e;"
+"esc_attr_x:1,2c;"
+"esc_attr__;_ex:1,2c;"
+"_nx:4c,1,2;"
+"_nx_noop:4c,1,2;_x:1,2c;"
+"_n:1,2;_n_noop:1,2;"
+"__ngettext:1,2;"
+"__ngettext_noop:1,2;_c,"
+"_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"Language: en_US\n"
+"X-Generator: Poedit "
+"1.8.6\n"
+"X-Poedit-"
+"SearchPath-0: .\n"
+
+#: admin/mbform-admin.php:63
+msgid ""
+"MBForm basic "
+"configuration page"
+msgstr ""
+
+#: admin/mbform-admin.php:64
+msgid "MBForm"
+msgstr ""
+
+#: admin/mbform-admin.php:138
+msgid "Basic Settings"
+msgstr ""
+
+#: admin/mbform-admin.php:144
+msgid "Display Settings"
+msgstr ""
+
+#: admin/mbform-admin.php:151
+msgid "Hotel Id"
+msgstr ""
+
+#: admin/mbform-admin.php:159
+msgid "URL identificator"
+msgstr ""
+
+#: admin/mbform-admin.php:167
+msgid "Hook to action"
+msgstr ""
+
+#: admin/mbform-admin.php:174
+msgid "Action Name"
+msgstr ""
+
+#: admin/mbform-admin.php:181
+msgid "Top distance"
+msgstr ""
+
+#: admin/mbform-admin.php:188
+msgid "Left distance"
+msgstr ""
+
+#: admin/mbform-admin.php:195
+msgid "Color palette"
+msgstr ""
+
+#: admin/mbform-admin.php:205
+msgid ""
+"From this administrator "
+"must configure the "
+"search parameters in "
+"Book-It, the same will "
+"be granted by the team "
+"Div-it in high account."
+msgstr ""
+
+#: admin/mbform-admin.php:210
+msgid ""
+"From this administrator "
+"you can define how "
+"display plugin."
+msgstr ""
+
+#: admin/mbform-admin.php:242
+msgid ""
+"Action Name to hook "
+"default: "
+"get_template_part_template-"
+"parts/content"
+msgstr ""
+
+#: admin/mbform-admin.php:259
+msgid "Green"
+msgstr ""
+
+#: admin/mbform-admin.php:260
+msgid "Blue"
+msgstr ""
+
+#: admin/mbform-admin.php:261
+msgid "Red"
+msgstr ""
+
+#: admin/mbform-admin.php:273
+msgid ""
+"Top distance to header"
+msgstr ""
+
+#: admin/mbform-admin.php:284
+msgid ""
+"Left distance to header"
+msgstr ""
+
+#: public/mbform-public.php:122
+#: public/mbform-public.php:144
+msgid ""
+".mbooking.com.ar/en/book/"
+msgstr ""
+
+#: public/partials/mbform-public-display.php:8
+#: public/partials/mbform-public-display.php:16
+msgid "Arrival Date"
+msgstr ""
+
+#: public/partials/mbform-public-display.php:17
+msgid "Arrival"
+msgstr ""
+
+#: public/partials/mbform-public-display.php:23
+msgid "Departure Date"
+msgstr ""
+
+#: public/partials/mbform-public-display.php:24
+msgid "Departure"
+msgstr ""
+
+#: public/partials/mbform-public-display.php:30
+#: public/partials/mbform-public-display.php:31
+msgid "Promotional Code"
+msgstr ""
+
+#: public/partials/mbform-public-display.php:36
+#: public/partials/mbform-public-display.php:37
+msgid "Book Now!"
+msgstr ""

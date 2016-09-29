@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MBForm\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2016-09-26 16:48-0300\n"
+"POT-Creation-Date: 2016-09-28 17:58-0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Div-it <webmaster@div-it.com.ar>\n"
@@ -108,27 +108,32 @@ msgstr "Esquerda raio de cabeçalho"
 msgid ".mbooking.com.ar/en/book/"
 msgstr ".mbooking.com.ar/pt/reserva/"
 
-#: public/partials/mbform-public-display.php:22
+#: public/partials/mbform-public-display.php:8
+#: public/partials/mbform-public-display.php:16
 msgid "Arrival Date"
 msgstr "Data de chegada"
 
-#: public/partials/mbform-public-display.php:23
+#: public/partials/mbform-public-display.php:17
 msgid "Arrival"
 msgstr "Chegada"
 
-#: public/partials/mbform-public-display.php:27
+#: public/partials/mbform-public-display.php:23
 msgid "Departure Date"
 msgstr "Data de partida"
 
-#: public/partials/mbform-public-display.php:28
+#: public/partials/mbform-public-display.php:24
 msgid "Departure"
 msgstr "Partida"
 
-#: public/partials/mbform-public-display.php:32
-#: public/partials/mbform-public-display.php:33
+#: public/partials/mbform-public-display.php:30
+#: public/partials/mbform-public-display.php:31
 msgid "Promotional Code"
 msgstr "Código promocional"
 
-#: public/partials/mbform-public-display.php:35
+#: public/partials/mbform-public-display.php:36
+msgid "Book!"
+msgstr "Reserve !"
+
+#: public/partials/mbform-public-display.php:37
 msgid "Book Now!"
-msgstr "Reserve agora"
+msgstr "Reserve agora!"
