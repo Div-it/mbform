@@ -50,7 +50,6 @@ class MBForm_Shortcode {
         $top = (isset($atts['top'])) ? $atts['top']: null;
         $left = (isset($atts['left'])) ? $atts['left']: null;
         $palette = (isset($atts['palette'])) ? $atts['palette']: null;
-	    MBForm_Public::loadShortCodeForm($top,$left,$palette);
-        return '';
+        return  MBForm_Public::loadShortCodeForm($top,$left,$palette);
     }
 }
