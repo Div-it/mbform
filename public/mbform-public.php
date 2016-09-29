@@ -98,17 +98,17 @@ class MBForm_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		if(defined('ICL_LANGUAGE_CODE')){
-            $locale = ICL_LANGUAGE_CODE;
-        }else{
-            $locale = get_locale();
-        }
+
+        $locale = (defined('ICL_LANGUAGE_CODE')) ? ICL_LANGUAGE_CODE : get_locale();
+
 
         //datepicker code
         wp_enqueue_script( 'picker', plugin_dir_url( __FILE__ ) . 'plugins/pickadates-3.5.6/picker.js', array( 'jquery' ), null, false );
         wp_enqueue_script( 'picker.date', plugin_dir_url( __FILE__ ) . 'plugins/pickadates-3.5.6/picker.date.js', array( 'jquery','picker' ), null, false );
         //localize
-        wp_enqueue_script( 'picker.date.'.$locale, plugin_dir_url( __FILE__ ) . 'plugins/pickadates-3.5.6/translations/'.$locale.'.js', array( 'jquery','picker','picker.date' ), null, false );
+        if($locale != 'en')
+            wp_enqueue_script( 'picker.date.'.$locale, plugin_dir_url( __FILE__ ) . 'plugins/pickadates-3.5.6/translations/'.$locale.'.js', array( 'jquery','picker','picker.date' ), null, false );
+
         //
         wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/mbform-public.js', array( 'jquery','picker','picker.date'), $this->version, false );
 
