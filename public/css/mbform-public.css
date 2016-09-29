@@ -27,7 +27,7 @@
 /*-----------------------------------------------------------------*/
 
 
-#mbmainform .mbmainform {position: fixed; left:0;top:0;width: 100%; z-index: 9999; min-height: 35px; padding-top: 5px; overflow-y: auto; padding-bottom: 15px;}
+#mbmainform .mbmainform {position: fixed; left:0;top:0;width: 100%; z-index: 9999; min-height: 35px; padding-top: 5px; padding-bottom: 15px;}
 #mbmainform .mbmainform .form-group { margin-bottom: -5px; }
 #mbmainform .mbmainform input {height: 30px}
 #mbmainform .tpl_blue { background: #1f3c73; }

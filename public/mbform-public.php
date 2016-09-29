@@ -98,7 +98,12 @@ class MBForm_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		$locale = get_locale();
+		if(defined('ICL_LANGUAGE_CODE')){
+            $locale = ICL_LANGUAGE_CODE;
+        }else{
+            $locale = get_locale();
+        }
+
         //datepicker code
         wp_enqueue_script( 'picker', plugin_dir_url( __FILE__ ) . 'plugins/pickadates-3.5.6/picker.js', array( 'jquery' ), null, false );
         wp_enqueue_script( 'picker.date', plugin_dir_url( __FILE__ ) . 'plugins/pickadates-3.5.6/picker.date.js', array( 'jquery','picker' ), null, false );

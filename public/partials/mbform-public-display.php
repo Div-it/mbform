@@ -7,7 +7,7 @@
             <div class="form-group">
                 <label for="hoteldestino" class="sr-only"><?php echo __('Arrival Date','mbform');?></label>
                 <input type="hidden" id="hoteldestino" name="hoteldestino" value="<?php echo $hotelDestino; ?>" class="form-control"/>
-                <div style="color: #fff; font-size: 1.5em; margin-top: 10px;" class="text-center">Reservé online</div>
+                <div style="color: #fff; font-size: 1.5em; margin-top: 10px;" class="text-center"><?php echo __('Book Now!','mbform');?></div>
             </div>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
