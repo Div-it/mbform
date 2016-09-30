@@ -19,7 +19,7 @@ Add the search form to **connect hotel's site with *`Book-it` search Engine* **
    4.2 Domain name (suhotel)
 5. Place the plugin into the theme by one of the followings :
    5.1 Place `<?php do_shortcode('[mbform]'); ?>` in your templates with theme editor
-   5.2 Place `<?php do_shortcode('[mbform]'); ?>` in your templates with theme editor
+   5.2 Place [mbform top=10em left=10em palette=blue ] in your templates with theme editor
    5.3 Place a shortcode into any post in any page
 
 == Frequently Asked Questions ==
