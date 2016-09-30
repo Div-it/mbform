@@ -40,16 +40,8 @@ class MBForm_Shortcode {
      *
      */
 	public function set_shortcode(){
-		add_shortcode('mbform', array(&$this,'loadForm'));
+		add_shortcode($this->shortcode_name, 'MBForm_Public','loadShortCodeForm');
 	}
 
-    /**
-     *
-     */
-	public function loadForm($atts, $content = null ){
-        $top = (isset($atts['top'])) ? $atts['top']: null;
-        $left = (isset($atts['left'])) ? $atts['left']: null;
-        $palette = (isset($atts['palette'])) ? $atts['palette']: null;
-        return  MBForm_Public::loadShortCodeForm($top,$left,$palette);
-    }
+
 }

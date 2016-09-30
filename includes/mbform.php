@@ -73,20 +73,13 @@ class MBForm {
 
 		$this->load_dependencies();
 		$this->set_locale();
+
 		$this->define_admin_hooks();
+
 		$this->define_public_hooks();		
-		$this->init_shorcode();
+
 	}
 
-    /**
-     * init_shorcode
-     * Init the shortcode add
-     * @since    1.0.0
-     */
-	public function init_shorcode(){
-		$plugin_shortcode = new MBForm_Shortcode('mbform');
-		$this->loader->add_action('init',$plugin_shortcode,'set_shortcode');
-	}
     
 
 
@@ -153,7 +146,8 @@ class MBForm {
 	private function set_locale() {
 
 		$plugin_i18n = new MBForm_i18n();
-
+        $plugin_i18n->loadDefaultWords();
+        $this->loader->setTranslator($plugin_i18n);
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
 	}
@@ -186,12 +180,17 @@ class MBForm {
 	private function define_public_hooks() {
 
 		$plugin_public = new MBForm_Public( $this->get_plugin_name(), $this->get_version() );
-        if( get_option('mbform_hook_active')){
-            $actionHook =get_option('mbform_action_hook');
-            $this->loader->add_action( $actionHook, 'MBForm_Public', 'loadForm',1000 );
-        }
+        $plugin_public->setWords($this->loader->getTranslator()->getWordsArray());
         $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
         $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+        if( get_option('mbform_hook_active')){
+            $actionHook =get_option('mbform_action_hook');
+            $this->loader->add_action( $actionHook,$plugin_public, 'loadForm',1000 );
+        }else{
+            $this->loader->add_action('init',$plugin_public,'init_shortcode');
+        }
+
     }
 
 	/**

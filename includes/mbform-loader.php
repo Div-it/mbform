@@ -41,6 +41,8 @@ class MBForm_Loader {
 	 */
 	protected $filters;
 
+
+    protected $translator;
 	/**
 	 * Initialize the collections used to maintain the actions and filters.
 	 *
@@ -50,8 +52,10 @@ class MBForm_Loader {
 
 		$this->actions = array();
 		$this->filters = array();
+        $this->translator = array();
 
-	}
+
+    }
 
 	/**
 	 * Add a new action to the collection to be registered with WordPress.
@@ -125,5 +129,13 @@ class MBForm_Loader {
 		}
 
 	}
+
+	public function setTranslator($i18nObject){
+        $this->translator = $i18nObject;
+    }
+
+    public function getTranslator(){
+        return $this->translator ;
+    }
 
 }
