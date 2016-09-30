@@ -13,7 +13,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       MBForm
- * Plugin URI:        http://www.div-it.com.ar/wp/mbform
+ * Plugin URI:        https://github.com/Div-it/mbform/
  * Description:       Formulario de busqueda para el motor de reservas Book-It
  * Version:           1.0.0
  * Author:            Div-it
