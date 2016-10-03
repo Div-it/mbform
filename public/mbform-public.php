@@ -109,7 +109,7 @@ class MBForm_Public {
         wp_enqueue_script( 'picker.date', plugin_dir_url( __FILE__ ) . 'plugins/pickadates-3.5.6/picker.date.js', array( 'jquery','picker' ), null, false );
         //localize
         if($locale != 'en'){
-       //     wp_enqueue_script( 'picker.date.'.$locale, plugin_dir_url( __FILE__ ) . 'plugins/pickadates-3.5.6/translations/'.$locale.'.js', array( 'jquery','picker','picker.date' ), null, false );
+            wp_enqueue_script( 'picker.date.'.$locale, plugin_dir_url( __FILE__ ) . 'plugins/pickadates-3.5.6/translations/'.$locale.'.js', array( 'jquery','picker','picker.date' ), null, false );
         }
         //
         wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/mbform-public.js', array( 'jquery','picker','picker.date'), $this->version, false );

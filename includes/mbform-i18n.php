@@ -34,27 +34,36 @@ class MBForm_i18n {
      *
      */
     public function loadDefaultWords(){
-        $this->_words = array(
-            'form.titulo' =>  __('Book Now!','mbform'),
-            'form.arrival.label' =>   __('Arrival Date','mbform'),
-            'form.arrival.placeholder' =>  __('Arrival','mbform'),
-            'form.departure.label' =>   __('Departure Date','mbform'),
-            'form.departure.placeholder' =>   __('Departure','mbform'),
-            'form.prcode.label' =>   __('Departure Date','mbform'),
-            'form.prcode.placeholder' =>  __('Promotional Code','mbform'),
-            'form.submit.desktop' =>  __('Book!','mbform'),
-            'form.submit.mobile' =>  __('Book Now!','mbform')
-        );
-
-        if($this->getICLExists()){
-            foreach($this->_words as $name => $value ){
-                icl_register_string(self::iclDomain, $name, $value);
-                $this->_words[$name] = icl_t(self::iclDomain, $name, $value);
-            }
-        }
 
         $locale = (defined('ICL_LANGUAGE_CODE')) ? ICL_LANGUAGE_CODE : get_locale();
         $this->setActualLangCode($locale);
+        //
+        if($locale == 'es_ES'|| $locale == 'es_AR'){
+            $this->_words = array(
+                'form.titulo' =>  'Reservar',
+                'form.arrival.label' => 'Fecha de entrada',
+                'form.arrival.placeholder' =>  'Entrada',
+                'form.departure.label' =>   'Fecha de salida',
+                'form.departure.placeholder' => 'Salida',
+                'form.prcode.label' => 'Cod. Promocional',
+                'form.prcode.placeholder' => 'Cod. Promocional',
+                'form.submit.desktop' => 'Reservar!',
+                'form.submit.mobile' => 'Reservar Ahora!'
+            );
+        }else{
+            $this->_words = array(
+                'form.titulo' =>  __('Book Now!','mbform'),
+                'form.arrival.label' =>   __('Arrival Date','mbform'),
+                'form.arrival.placeholder' =>  __('Arrival','mbform'),
+                'form.departure.label' =>   __('Departure Date','mbform'),
+                'form.departure.placeholder' =>   __('Departure','mbform'),
+                'form.prcode.label' =>   __('Promotional Code','mbform'),
+                'form.prcode.placeholder' =>  __('Prom. Code','mbform'),
+                'form.submit.desktop' =>  __('Book!','mbform'),
+                'form.submit.mobile' =>  __('Book Now!','mbform')
+            );
+        }
+
     }
 
     /**
