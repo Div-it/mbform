@@ -5,7 +5,8 @@
         <div class="col-lg-1"></div>
         <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12 hidden-xs hidden-sm ">
             <div class="form-group">
-                <label for="hoteldestino" class="sr-only"><?php echo __('Arrival Date','mbform');?></label>
+                <input type="hidden" disabled="disabled" value="<?php echo $i18n['form.lang'] ;?>" name="langCode" /> 
+                <label for="hoteldestino" class="sr-only"><?php echo $i18n['form.hotel.label'] ;?></label>
                 <input type="hidden" id="hoteldestino" name="hoteldestino" value="<?php echo $hotelDestino; ?>" class="form-control"/>
                 <div style="color: #fff; font-size: 1.5em; margin-top: 10px;" class="text-center"><?php echo $i18n['form.titulo'];?></div>
             </div>

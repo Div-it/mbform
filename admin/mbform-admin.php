@@ -315,7 +315,7 @@ class MBForm_Admin {
 	 */
 	public function sanitize_hook($request_action_hook){
 
-		return boolval($request_action_hook);
+		return ($request_action_hook);
 	}
 
 

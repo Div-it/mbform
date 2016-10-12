@@ -181,15 +181,17 @@ class MBForm {
 
 		$plugin_public = new MBForm_Public( $this->get_plugin_name(), $this->get_version() );
         $plugin_public->setWords($this->loader->getTranslator()->getWordsArray());
-        $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-        $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
-        if( get_option('mbform_hook_active')){
-            $actionHook =get_option('mbform_action_hook');
+        //
+        $this->loader->add_action('init',$plugin_public,'init_shortcode');
+        //           	
+        if( get_option('mbform_hook_active')){	      	
+	    	$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
+			$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+            $actionHook =get_option('mbform_action_hook');            
             $this->loader->add_action( $actionHook,$plugin_public, 'loadForm',1000 );
-        }else{
-            $this->loader->add_action('init',$plugin_public,'init_shortcode');
-        }
+            $this->loader->add_action( 'sf_main_container_start',$plugin_public, 'loadForm',1000 );
+        }        
+        
 
     }
 

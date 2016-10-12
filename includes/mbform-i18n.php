@@ -35,12 +35,17 @@ class MBForm_i18n {
      */
     public function loadDefaultWords(){
 
-        $locale = (defined('ICL_LANGUAGE_CODE')) ? ICL_LANGUAGE_CODE : get_locale();
+        //$locale = (defined('ICL_LANGUAGE_CODE')) ? ICL_LANGUAGE_CODE : get_locale();
+        $locale =  (strpos($_SERVER['REQUEST_URI'],'/cs1/en/') === false) ? 'es':'en';
         $this->setActualLangCode($locale);
+        $altLang = (defined('ICL_LANGUAGE_CODE')) ? 'definido':'no definido';
         //
-        if($locale == 'es_ES'|| $locale == 'es_AR'){
+        if($locale == 'es'){
             $this->_words = array(
+                'form.defaultAction' => '.mbooking.com.ar/es/reservas/',
                 'form.titulo' =>  'Reservar',
+                'form.lang' =>  $altLang,
+                'form.hotel.label' => 'Hotel',
                 'form.arrival.label' => 'Fecha de entrada',
                 'form.arrival.placeholder' =>  'Entrada',
                 'form.departure.label' =>   'Fecha de salida',
@@ -52,8 +57,11 @@ class MBForm_i18n {
             );
         }else{
             $this->_words = array(
+                'form.defaultAction' => __('.mbooking.com.ar/en/book/','mbform') ,
                 'form.titulo' =>  __('Book Now!','mbform'),
-                'form.arrival.label' =>   __('Arrival Date','mbform'),
+                'form.lang' =>  $altLang,
+                'form.hotel.label' => __('Hotel','mbform'),
+                'form.arrival.label' => __('Arrival Date','mbform'),
                 'form.arrival.placeholder' =>  __('Arrival','mbform'),
                 'form.departure.label' =>   __('Departure Date','mbform'),
                 'form.departure.placeholder' =>   __('Departure','mbform'),

@@ -42,6 +42,11 @@ class MBForm_Public {
 	private $version;
 
     private $words;
+    private $loader;
+
+    public function setLoader($loader){
+        $this->loader = $loader; 
+    }
 
 	/**
 	 * Initialize the class and set its properties.
@@ -79,6 +84,7 @@ class MBForm_Public {
         wp_enqueue_style( 'picker.default', plugin_dir_url( __FILE__ ) . 'plugins/pickadates-3.5.6/themes/default.css', array(), $this->version, 'all' );
 		wp_enqueue_style( 'picker.default.date', plugin_dir_url( __FILE__ ) . 'plugins/pickadates-3.5.6/themes/default.date.css', array('picker.default'), null, 'all' );
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/mbform-public.css', array('picker.default','picker.default.date'), null, 'all' );
+        wp_enqueue_style( $this->plugin_name.'.cardinal', plugin_dir_url( __FILE__ ) . 'css/mbform-cardinal-overwrite.css', array($this->plugin_name), null, 'all' );
 
 	}
 
@@ -132,7 +138,8 @@ class MBForm_Public {
     //
         $includedhtml = '';
         $hotelDestino = get_option('mbform_hotel_destino_id');
-        $action ='https://'.get_option('mbform_url_identifier').__('.mbooking.com.ar/en/book/','mbform') ;
+        $i18n = $this->getWords();
+        $action ='https://'.get_option('mbform_url_identifier').$i18n['form.defaultAction'];
         $styleVals = array();
         if(isset($left)){
             array_push($styleVals ,'left:'.$left);
@@ -144,15 +151,14 @@ class MBForm_Public {
         if($palette){
             $class = 'tpl_'.$palette;
         }else{
-            $class = 'tpl_green';
+            $class = 'tpl_blue';
         }
         $style = '';
         if(count($styleVals)){
-       //     $style = ' style="'.implode(';',$styleVals).'" ';
+            $style = ' style="'.implode(';',$styleVals).'" ';
         }
         //
-        ob_start();
-        $i18n = $this->getWords();
+        ob_start();        
         include_once( plugin_dir_path ( __FILE__ ) .'..'.DIRECTORY_SEPARATOR.'public'.DIRECTORY_SEPARATOR. 'partials'.DIRECTORY_SEPARATOR.$partialName.'.php');
         $includedhtml = ob_get_contents();
         ob_end_clean();
@@ -168,6 +174,8 @@ class MBForm_Public {
      * @return string
      */
     public function loadShortCodeForm($atts,$content = null){
+        $this->enqueue_scripts();
+        $this->enqueue_styles();
         $top = (isset($atts['top'])) ? $atts['top']: null;
         $left = (isset($atts['left'])) ? $atts['left']: null;
         $palette = (isset($atts['palette'])) ? $atts['palette']: null;

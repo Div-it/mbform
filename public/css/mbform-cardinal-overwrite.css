@@ -1,0 +1,20 @@
+/***OVERRIDES CARDINAL TEMPLATE****/
+.header-wrap, .header-standard-overlay #header, .vertical-header .header-wrap #header-section, #header-section .is-sticky #header.sticky-header {
+	margin-top: 50px !important;
+}
+
+#mobile-logo.has-img { margin-top: 100px; }
+.menu-bars { width: 100px; }
+.menu-bars-link { margin-top: 50px; }
+.mobile-header-opts { top: 70% !important; width: 70px; }
+a.mobile-menu-link span.menu-bars, a.mobile-menu-link span.menu-bars:before, a.mobile-menu-link span.menu-bars:after { width: 40px !important; }
+a.mobile-menu-link { width: 40px !important }
+.a.mobile-menu-link span.menu-bars:before {top: 10px !important;}
+.mobile-header-opts.opts-right, .mobile-left-logo .mobile-header-opts { right: 0 !important }
+#logo img.retina { width: auto !important; margin-top: 15px; }
+#logo img.standard { margin-top: 15px; }
+
+/******FIN OVERRIDES CARDINAL TEMPLATE******************/ 
+
+
+
